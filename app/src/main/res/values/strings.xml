@@ -1,0 +1,114 @@
+<resources>
+    <string name="app_name">Easy Outfit</string>
+    <string name="title_clothes">Clothes</string>
+    <string name="title_outfit">Outfits</string>
+    <string name="title_calendar">Calendar</string>
+    <string name="camera_permission_text">You must allow access to the camera</string>
+    <string name="OK_message">OK</string>
+    <string name="cancel_message">Cancel</string>
+    <string name="pick_clothes_input_title">Pick image from...</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="button_add_image">Add Image</string>
+    <string name="button_replace_image">Replace Image</string>
+    <string name="button_edit_image">Edit Image</string>
+    <string name="clothes_type_text_view">Type</string>
+    <string name="primary_color">Primary Color</string>
+    <string name="secondary_colors">Secondary Colors</string>
+    <string name="brand">Brand</string>
+    <string name="price">Price</string>
+    <string name="seasons">Seasons</string>
+    <string name="summer">Summer</string>
+    <string name="fall">Fall</string>
+    <string name="winter">Winter</string>
+    <string name="spring">Spring</string>
+    <string name="clothes_category_text_view">Category</string>
+    <string name="wishlist_checkbox">Add to WishList</string>
+    <string name="add_final_button">ADD</string>
+    <string name="replace_final_button">REPLACE</string>
+    <string name="pick_color">Pick a color...</string>
+    <string name="picked_color">Color Picked </string>
+    <string name="image_necessary_for_color">You need to insert an image to pick a color</string>
+    <string name="image_and_primary_necessary">You need to insert at least an image and the primary color</string>
+    <string name="added_successfully">Added Successfully</string>
+
+    <string name="replace">Replace</string>
+    <string name="delete">Delete</string>
+
+
+    <string name="select_types">Select Types</string>
+    <string name="select_brands">Select Brands</string>
+    <string name="include_seasonless">Include Seasonless</string>
+    <string name="include_priceless">Include Priceless</string>
+    <string name="include_brandless">Include Brandless</string>
+    <string name="select_seasons">Select Seasons</string>
+    <string name="select_categories">Select Categories</string>
+    <string name="include_wishlist">Include Wishlist</string>
+    <string name="price_low">Low</string>
+    <string name="to">to</string>
+    <string name="price_high">High</string>
+    <string name="create_outfit">Create Outfit</string>
+    <string name="generate_outfit">Generate Outfit</string>
+    <string name="select_all">Select All</string>
+    <string name="include_all">Include All</string>
+    <string name="done">Done</string>
+
+
+    <string name="currency_symbol">€</string>
+
+    <string-array name="clothes_type_array">
+        <item>Shirt</item>
+        <item>Dress</item>
+        <item>Pants</item>
+        <item>Skirt</item>
+        <item>Shorts</item>
+        <item>Shoes</item>
+        <item>Coat</item>
+        <item>Jacket</item>
+        <item>Belt</item>
+        <item>Handbag</item>
+        <item>Hat</item>
+        <item>Accessory</item>
+    </string-array>
+
+    <string-array name="clothes_type_array_plural">
+        <item>Shirts</item>
+        <item>Dresses</item>
+        <item>Pants</item>
+        <item>Skirts</item>
+        <item>Shorts</item>
+        <item>Shoes</item>
+        <item>Coats</item>
+        <item>Jackets</item>
+        <item>Belts</item>
+        <item>Handbags</item>
+        <item>Hats</item>
+        <item>Accessories</item>
+    </string-array>
+
+    <string-array name="clothes_category_array">
+        <item>Casual</item>
+        <item>Work</item>
+        <item>Sport</item>
+        <item>Formal</item>
+    </string-array>
+
+
+    <string name="splash_image">Splash_Image</string>
+    <string name="error_creating_file">Could not create a file</string>
+    <string name="error_retrieving_from_gallery">Could not retrieve image from gallery</string>
+    <string name="error_saving_image">Could not save the image</string>
+
+    <string name="title_activity_add_clothes">Add Clothes</string>
+
+    <string name="group_by_type">Group by Type</string>
+    <string name="group_by_category">Group by Category</string>
+
+    <string name="add_clothes">Add Clothes</string>
+    <string name="total_price">Total Price: </string>
+    <string name="title_activity_select_clothes">SelectClothesActivity</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_filter_clothes">Filter Clothes</string>
+    <string name="title_activity_edit_outfit">Edit Outfit</string>
+</resources>

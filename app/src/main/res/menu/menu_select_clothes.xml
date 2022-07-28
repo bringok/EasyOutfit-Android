@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_select_clothes_group_type"
+        android:title="@string/group_by_type" />
+    <item
+        android:id="@+id/menu_select_clothes_group_category"
+        android:title="@string/group_by_category" />
+
+    <item
+        android:id="@+id/menu_select_clothes_done"
+        android:title="@string/done"
+        app:showAsAction="ifRoom" />
+</menu>

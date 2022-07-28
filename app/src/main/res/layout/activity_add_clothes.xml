@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.easyoutfit.easyoutfit.AddClothesActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id="@+id/checkBoxWishList_filterClothes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/wishlist_checkbox"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutClothesCategory_filterClothes"
+                android:layout_marginLeft="16dp" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayoutClothesCategory_filterClothes"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutSeason_filterClothes">
+
+                <Spinner
+                    android:id="@+id/spinnerClothesCategory"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:entries="@array/clothes_category_array"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textViewClothesCategory_filterClothes"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textViewClothesCategory_filterClothes" />
+
+                <TextView
+                    android:id="@+id/textViewClothesCategory_filterClothes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/clothes_category_text_view"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginLeft="16dp" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayoutImages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/addImageButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="onClickButton"
+                    android:text="@string/button_add_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/addClothesImageView" />
+
+                <ImageView
+                    android:id="@+id/addClothesImageView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:contentDescription="@string/title_activity_add_clothes"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@android:color/transparent"
+                    tools:layout_conversion_absoluteHeight="1dp"
+                    tools:layout_conversion_absoluteWidth="1dp" />
+
+                <Button
+                    android:id="@+id/editImageButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:onClick="onClickButton"
+                    android:text="@string/button_edit_image"
+                    android:visibility="visible"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/replaceImageButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.505"
+                    app:layout_constraintStart_toEndOf="@+id/addImageButton" />
+
+                <Button
+                    android:id="@+id/replaceImageButton"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="onClickButton"
+                    android:text="@string/button_replace_image"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/addImageButton"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/addClothesImageView" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayoutClothesType_filterClothes"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutImages">
+
+                <Spinner
+                    android:id="@+id/spinnerClothesType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:entries="@array/clothes_type_array"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textViewClothesType_filterClothes"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textViewClothesType_filterClothes" />
+
+                <TextView
+                    android:id="@+id/textViewClothesType_filterClothes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/clothes_type_text_view"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayoutBrands_filterClothes"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutSecondaryColors"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true">
+
+                <EditText
+                    android:id="@+id/editTextBrand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="start"
+                    android:hint="@string/brand"
+                    android:inputType="textCapCharacters"
+                    android:selectAllOnFocus="false"
+                    android:singleLine="true"
+                    android:textAlignment="viewStart"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.4"
+                    android:layout_marginLeft="16dp" />
+
+                <EditText
+                    android:id="@+id/editTextPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:ems="5"
+                    android:gravity="end"
+                    android:hint="@string/price"
+                    android:inputType="numberDecimal"
+                    android:selectAllOnFocus="false"
+                    android:singleLine="true"
+                    android:textAlignment="viewStart"
+                    android:textSize="14sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/editTextBrand"
+                    app:layout_constraintEnd_toStartOf="@+id/textViewCurrency"
+                    android:layout_marginRight="8dp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:id="@+id/textViewCurrency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/currency_symbol"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/editTextPrice"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginRight="16dp" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayoutSecondaryColors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutPrimaryColor">
+
+                <Button
+                    android:id="@+id/buttonFirstSecondaryColors"
+                    style="@style/Base.Widget.AppCompat.Button.Small"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/ic_add_color_black_24dp"
+                    android:onClick="onClickButton"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textViewSecondaryColors"
+                    app:layout_constraintStart_toEndOf="@+id/textViewSecondaryColors" />
+
+                <Button
+                    android:id="@+id/buttonSecondSecondaryColors"
+                    style="@style/Base.Widget.AppCompat.Button.Small"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/ic_add_color_black_24dp"
+                    android:onClick="onClickButton"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/buttonFirstSecondaryColors"
+                    app:layout_constraintStart_toEndOf="@+id/buttonFirstSecondaryColors" />
+
+                <TextView
+                    android:id="@+id/textViewSecondaryColors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/secondary_colors"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayoutPrimaryColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutClothesType_filterClothes">
+
+                <TextView
+                    android:id="@+id/textViewPrimaryColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/primary_color"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/buttonPrimaryColor"
+                    style="@style/Base.Widget.AppCompat.Button.Small"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/ic_add_color_black_24dp"
+                    android:onClick="onClickButton"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textViewPrimaryColor"
+                    app:layout_constraintStart_toEndOf="@+id/textViewPrimaryColor"
+                    android:layout_marginLeft="16dp" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayoutSeason_filterClothes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutBrands_filterClothes">
+
+                <TextView
+                    android:id="@+id/textViewSeasons_filterClothes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/seasons"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxSummer_filterClothes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/summer"
+                    app:layout_constraintStart_toEndOf="@+id/textViewSeasons_filterClothes"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxFall_filterClothes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/fall"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/checkBoxSummer_filterClothes"
+                    app:layout_constraintStart_toEndOf="@+id/checkBoxSummer_filterClothes" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxWinter_filterClothes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/winter"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textViewSeasons_filterClothes"
+                    app:layout_constraintTop_toBottomOf="@+id/checkBoxSummer_filterClothes" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxSpring"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/spring"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/checkBoxWinter_filterClothes"
+                    app:layout_constraintStart_toEndOf="@+id/checkBoxWinter_filterClothes" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <Button
+                android:id="@+id/buttonAdd"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:onClick="onClickButton"
+                android:text="@string/add_final_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxWishList_filterClothes" />
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
